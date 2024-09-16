@@ -26,9 +26,9 @@ const links = [
     path: '/contact'
   },
 ]
+
 export function Nav() {
   const path = usePathname()
-  console.log('path -->', path)
   return (
     <nav className="flex gap-8 ">
       {links.map((link, index) => {
