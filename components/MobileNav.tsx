@@ -40,7 +40,7 @@ export function MobileNav() {
         <div className="mt-32 text-center text-2xl">
           <Link href="/">
             <h1 className="text-4xl font-semibold">
-              João Medeiros <span className="text-accent">.</span>
+              João<span className="text-accent">.</span>
             </h1>
           </Link>
         </div>
