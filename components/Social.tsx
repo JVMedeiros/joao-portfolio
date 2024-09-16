@@ -10,7 +10,12 @@ const socials = [
   {icon: <FaTwitter />, path: ""},
 ]
 
-export function Social({containerStyles, iconStyles}: any) {
+interface SocialProps {
+  containerStyles: string
+  iconStyles: string
+}
+
+export function Social({containerStyles, iconStyles}: SocialProps) {
   return (
     <div className={containerStyles}>
       {socials.map((item, index) => {
