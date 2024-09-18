@@ -47,7 +47,7 @@ export function MobileNav() {
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => {
             return (
-              <SheetClose asChild>
+              <SheetClose asChild key={index}>
                 <Link
                   href={link.path}
                   key={index}
