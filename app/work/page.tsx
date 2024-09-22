@@ -16,7 +16,7 @@ const projects = [
     title: 'project 01',
     description: 'Lorem ipsum',
     stack: [{ name: 'Nest JS' }, { name: 'TailwindCSS' }, { name: 'Html 5' }, { name: 'Css 3' }, { name: 'Typescript' }],
-    image: 'assets/test',
+    image: '/assets/work/thumb1.jpg',
     live: '',
     github: ''
   },
@@ -26,7 +26,7 @@ const projects = [
     title: 'project 02',
     description: 'Lorem ipsum',
     stack: [{ name: 'Nest JS' }, { name: 'TailwindCSS' }, { name: 'Html 5' }, { name: 'Css 3' }, { name: 'Typescript' }],
-    image: 'assets/test',
+    image: '/assets/work/thumb2.jpg',
     live: '',
     github: ''
   },
@@ -36,7 +36,7 @@ const projects = [
     title: 'project 03',
     description: 'Lorem ipsum',
     stack: [{ name: 'Nest JS' }, { name: 'TailwindCSS' }, { name: 'Html 5' }, { name: 'Css 3' }, { name: 'Typescript' }],
-    image: 'assets/test',
+    image: '/assets/work/thumb3.jpg',
     live: '',
     github: ''
   },
@@ -46,7 +46,7 @@ const projects = [
     title: 'project 04',
     description: 'Lorem ipsum',
     stack: [{ name: 'Nest JS' }, { name: 'TailwindCSS' }, { name: 'Html 5' }, { name: 'Css 3' }, { name: 'Typescript' }],
-    image: 'assets/test',
+    image: '/assets/work/thumb4.jpg',
     live: '',
     github: ''
   },
@@ -127,7 +127,17 @@ function Work() {
             >
               {projects.map((project, index) => {
                 return (
-                  <SwiperSlide key={index}>slide</SwiperSlide>
+                  <SwiperSlide 
+                    key={index}
+                    className='w-full'
+                  >
+                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                      <div></div>
+                      <div className="relative w-full h-full">
+                        <Image src={project.image} fill className="object-cover" alt="project preview image"/>
+                      </div>
+                    </div>
+                  </SwiperSlide>
                 )
               })}
             </Swiper>
