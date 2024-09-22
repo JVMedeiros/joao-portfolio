@@ -74,22 +74,22 @@ const education = {
   description: 'Description',
   items: [
     {
-      company: 'FATEC - São José dos Campos',
+      institution: 'FATEC - São José dos Campos',
       degree: 'System Analysis and Development',
       duration: '2023 - Present'
     },
     {
-      company: 'Rocketseat',
+      institution: 'Rocketseat',
       degree: 'Backend Bootcamp',
       duration: '2024'
     },
     {
-      company: 'Rocketseat',
+      institution: 'Rocketseat',
       degree: 'Frontend Bootcamp',
       duration: '2024 - Present'
     },
     {
-      company: 'Rocketseat',
+      institution: 'Rocketseat',
       degree: 'Golang Bootcamp',
       duration: '2024 - Present'
     },
@@ -168,6 +168,8 @@ function Resume() {
                 <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
                   {experience.description}
                 </p>
+
+                {/* FIX: Scroll is not turning green */}
                 <ScrollArea>
                   <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
                     {experience.items.map((item, index) => {
@@ -186,8 +188,50 @@ function Resume() {
                 </ScrollArea>
               </div>
             </TabsContent>
-            <TabsContent value='education' className='w-full'>education</TabsContent>
-            <TabsContent value='skills' className='w-full'>skills</TabsContent>
+
+            <TabsContent value='education' className='w-full'>
+              <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                <h3 className='text-4xl font-bold'>{education.title}</h3>
+                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                  {education.description}
+                </p>
+
+                {/* FIX: Scroll is not turning green */}
+                <ScrollArea>
+                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
+                    {education.items.map((item, index) => {
+                      return (
+                        <li key={index} className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start'>
+                          <span className='text-accent'>{item.duration}</span>
+                          <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.degree}</h3>
+                          <div className='flex items-center gap-3'>
+                            <span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
+                            <p className='text-white/60'>{item.institution}</p>
+                          </div>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+            <TabsContent value='skills' className='w-full h-full'>
+              <div className="flex flex-col gap-[30px]">
+                <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                  <h3 className='text-4xl font-bold'>{skills.title}</h3>
+                  <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                    {skills.description}
+                  </p>
+                </div>
+                <ul>
+                  {skills.skillList.map((skill, index) => {
+                    return (
+                      <li key={index}>{skill.name}</li>
+                      )
+                    })}
+                </ul>
+              </div>
+            </TabsContent>
             <TabsContent value='about' className='w-full'>about me</TabsContent>
 
           </div>
