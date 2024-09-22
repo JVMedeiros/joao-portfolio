@@ -5,6 +5,7 @@ import { SiTailwindcss, SiNextdotjs, SiTypescript } from 'react-icons/si'
 import { motion } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const about = {
   title: 'About me',
@@ -223,10 +224,21 @@ function Resume() {
                     {skills.description}
                   </p>
                 </div>
-                <ul>
+                <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
                   {skills.skillList.map((skill, index) => {
                     return (
-                      <li key={index}>{skill.name}</li>
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className='w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group'>
+                              <div className='text-6xl group-hover:text-accent transition-all duration-300'>{skill.icon}</div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className='capitalize'>{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
                       )
                     })}
                 </ul>
