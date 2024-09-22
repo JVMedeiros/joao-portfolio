@@ -7,3 +7,4 @@ TODO:
 - Adicionar toggle para mudar de inglês para português
 - Ajustar o SVG da home page - Fazer com que rode em volta da foto
 - Adicionar as demais skills na página de resume
+- Adicionar as descrições dos services disponíveis na página de service
