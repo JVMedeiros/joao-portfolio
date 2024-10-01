@@ -17,7 +17,7 @@ const info = [
     icon: <FaEnvelope />,
     title: 'Email',
     description: 'jv.medeiros.gallina@gmail.com'
-  },  {
+  }, {
     icon: <FaMapMarkedAlt />,
     title: 'Address',
     description: 'São José dos Campos, São Paulo - Brasil'
@@ -26,9 +26,9 @@ const info = [
 
 function Contact() {
   return (
-    <motion.section       
+    <motion.section
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: {delay: 2.4, duration: 0.4, ease: 'easeIn'} }}
+      animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' } }}
       className="py-6"
     >
       <div className="container mx-auto">
@@ -42,15 +42,15 @@ function Contact() {
               </p>
               {/* Inputs content*/}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First Name"/>
-                <Input type="last" placeholder="Last Name"/>
-                <Input type="email" placeholder="Email"/>
-                <Input type="phone" placeholder="Phone number"/>
+                <Input type="firstname" placeholder="First Name" />
+                <Input type="last" placeholder="Last Name" />
+                <Input type="email" placeholder="Email" />
+                <Input type="phone" placeholder="Phone number" />
               </div>
               {/* Select content */}
               <Select>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service"/>
+                  <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
@@ -63,7 +63,7 @@ function Contact() {
                 </SelectContent>
               </Select>
               {/* Textarea content */}
-              <Textarea className="h-[200px]" placeholder="Type your message here."/>
+              <Textarea className="h-[200px]" placeholder="Type your message here." />
               {/* Button Area */}
               <Button size="md" className="max-w-40">Send message</Button>
             </form>
