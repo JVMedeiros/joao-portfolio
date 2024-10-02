@@ -1,5 +1,6 @@
 "use client";
 
+import { githubApi } from "@/app/api/github";
 import CountUp  from "react-countup";
 
 // TODO: Receber esses stats do github 
@@ -27,7 +28,10 @@ const stats = [
   },
 ]
 
-export function Stats () {
+export async function Stats () {
+  const response = await githubApi.get('/repos/JVMedeiros')
+  const userData = response.data
+  console.log('userData', userData)
   return (
     <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
       <div className="container mx-auto">
